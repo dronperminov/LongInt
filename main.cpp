@@ -210,10 +210,19 @@ void modulus() {
 	printTestResults(mods);
 }
 
+void factorials() {
+	for (int i = 0; i <= 50; i++) {
+		LongInt n = i;
+		std::cout << n << "! = " << n.factorial() << std::endl;
+	}
+}
+
 int main() {
 	additions();
 	subtractions();
 	multiplications();
 	divisions();
 	modulus();
+
+	factorials();
 }

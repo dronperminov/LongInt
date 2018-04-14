@@ -39,6 +39,17 @@ public:
 	LongInt& operator/=(const LongInt& n); // деление двух чисел (краткая форма)
 	LongInt& operator%=(const LongInt& n); // остаток от деления двух чисел (краткая форма)
 
+	LongInt operator++(int); // постфиксная форма инкремента
+	LongInt operator--(int); // постфиксная форма декремента
+
+	LongInt& operator++(); // префиксная форма инкремента
+	LongInt& operator--(); // префиксная форма декремента
+
+	bool isEven() const; // проверка на чётность
+	bool isOdd() const; // проверка на нечётность
+
+	LongInt factorial() const; // факториал числа
+
 	friend std::istream& operator>>(std::istream &fs, LongInt &n);
 	friend std::ostream& operator<<(std::ostream &fs, const LongInt &n);
 };

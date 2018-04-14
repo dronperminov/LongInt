@@ -372,6 +372,49 @@ LongInt& LongInt::operator%=(const LongInt& n) {
 	return (*this = *this % n);
 }
 
+
+LongInt LongInt::operator++(int) {
+	LongInt tmp(*this);
+	*this += 1;
+
+	return tmp;
+}
+
+LongInt LongInt::operator--(int) {
+	LongInt tmp(*this);
+	*this -= 1;
+
+	return tmp;
+}
+
+LongInt& LongInt::operator++() {
+	return (*this += 1);
+}
+
+LongInt& LongInt::operator--() {
+	return (*this -= 1);
+}
+
+bool LongInt::isEven() const {
+	return digits[digits.size() - 1] % 2 == 0;
+}
+
+bool LongInt::isOdd() const {
+	return digits[digits.size() - 1] % 2 == 1;
+}
+
+LongInt LongInt::factorial() const {
+	if (sign == -1)
+		throw string("LongInt::factorial() - number must be positive");
+
+	LongInt fact = 1;
+
+	for (LongInt i = 2; i <= *this; i++)
+		fact *= i;
+
+	return fact;
+}
+
 // ввод из потока
 istream& operator>>(istream &fs, LongInt &n) {
 	char c;
